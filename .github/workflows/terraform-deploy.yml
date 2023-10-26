@@ -27,7 +27,7 @@ jobs:
 
       - name: Apply Terraform (Dev)
         run: |
-          terraform workspace select dev -or-create
+          terraform workspace select dev || terraform workspace new dev
           terraform apply -auto-approve
           terraform output
         env:
@@ -68,7 +68,7 @@ jobs:
 
       - name: Apply Terraform (Staging)
         run: |
-          terraform workspace select staging -or-create
+          terraform workspace select staging || terraform workspace new staging
           terraform apply -auto-approve
           terraform output
         env:
@@ -111,7 +111,7 @@ jobs:
 
       - name: Apply Terraform (Prod)
         run: |
-          terraform workspace select prod -or-create
+          terraform workspace select prod || terraform workspace new prod
           terraform apply -auto-approve
           terraform output
         env:
