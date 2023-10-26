@@ -92,6 +92,7 @@ jobs:
     name: Production Enironment
     needs: staging
     runs-on: ubuntu-latest
+    environment: manual-trigger
 
     steps:
       - name: Checkout Code
